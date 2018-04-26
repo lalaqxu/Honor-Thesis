@@ -1,6 +1,6 @@
-Honor-Thesis:
+#Honor-Thesis:
 
-R code experimenting with different machine learning models for predicting recidivism
+Experimenting with different machine learning models for predicting recidivism
 
 Data Source: https://github.com/propublica/compas-analysis
 
