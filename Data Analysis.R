@@ -129,11 +129,151 @@ df_race <- mutate(df_race, crime_factor = factor(c_charge_degree)) %>%
       within(gender_factor <- relevel(gender_factor, ref = 2)) %>%
       mutate(score_factor = factor(score_text != "Low", labels = c("LowScore","HighScore")))
 
-summary(df_race$race)
+#Summary Statistics
+
+#Race
+summary(df_race$race_factor)
 #African American
 #3175 
 #Caucasian
 #2103
+
+summary(as.factor(df_race[df_race$race_factor == "African-American", ]$two_year_recid))
+#    0    1 
+# 1514 1661
+1661/3175
+# 0.5231496
+1514/3175
+#0.4768504
+
+summary(as.factor(df_race[df_race$race_factor == "Caucasian", ]$two_year_recid))
+#    0    1 
+# 1281  822 
+822/2103
+# 0.3908702
+1281/2103
+# 0.6091298
+
+#Gender
+summary(df_race$gender_factor)
+#Female
+#1031
+#Male
+#4247
+
+summary(as.factor(df_race[df_race$gender_factor == "Female", ]$two_year_recid))
+#   0   1 
+# 658 373
+373/1031
+# 0.3617847
+658/1031
+# 0.6382153
+
+summary(as.factor(df_race[df_race$gender_factor == "Male", ]$two_year_recid))
+#    0    1 
+# 2137 2110
+2110/4247
+# 0.4968213
+2137/4247
+# 0.5031787
+
+#Race and Gender
+summary(df_race[df_race$race_factor == "African-American", ]$gender_factor)
+summary(df_race[df_race$race_factor == "Caucasian", ]$gender_factor)
+#AM
+2626
+#CM
+1621
+#AF
+549
+#CF
+482
+
+summary(as.factor(df_race[df_race$race_factor == "African-American" & df_race$gender_factor=="Male", ]$two_year_recid))
+#    0    1 
+# 1168 1458 
+1458/2626
+# 0.5552171
+1168/2626
+# 0.4447829
+
+summary(as.factor(df_race[df_race$race_factor == "Caucasian" & df_race$gender_factor=="Male", ]$two_year_recid))
+#   0   1 
+# 969 652 
+652/1621
+# 0.4022209
+969/1621
+# 0.5977791
+
+summary(as.factor(df_race[df_race$race_factor == "African-American" & df_race$gender_factor=="Female", ]$two_year_recid))
+#   0   1 
+# 346 203 
+203/549
+# 0.3697632
+346/549
+# 0.6302368
+
+summary(as.factor(df_race[df_race$race_factor == "Caucasian" & df_race$gender_factor=="Female", ]$two_year_recid))
+#   0   1 
+# 312 170 
+170/482
+# 0.3526971
+312/482
+# 0.6473029
+
+summary(df_race$age_cat)
+#Less than 25
+#1156
+#25-45
+#3026
+#Greater than 45
+#1096
+
+summary(as.factor(df_race[df_race$age_cat == "Less than 25", ]$two_year_recid))
+#   0   1 
+# 496 660
+660/1156
+# 0.5709343
+496/1156
+# 0.4290657
+
+summary(as.factor(df_race[df_race$age_cat == "25 - 45", ]$two_year_recid))
+#    0    1 
+# 1565 1461
+1461/3026
+# 0.4828156
+1565/3026
+# 0.5171844
+
+summary(as.factor(df_race[df_race$age_cat == "Greater than 45", ]$two_year_recid))
+#   0   1 
+# 734 362 
+362/1096
+# 0.330292
+734/1096
+# 0.669708
+
+summary(df_race$violent_charge)
+#Violent
+#1439
+#NonViolent
+#3839
+
+summary(as.factor(df_race[df_race$violent_charge == "Violent", ]$two_year_recid))
+#   0   1 
+# 866 573 
+573/1439
+# 0.3981932
+866/1439
+# 0.6018068
+
+summary(as.factor(df_race[df_race$violent_charge == "NonViolent", ]$two_year_recid))
+#    0    1 
+# 1929 1910 
+1910/3839
+# 0.4975254
+1929/3839
+# 0.5024746
 
 #Scatterplot
 pairs(~age+crime_factor+race_factor+gender_factor+priors_count+two_year_recid, data=df_race, main="Scatterplot Matrix")
@@ -165,8 +305,52 @@ AIC(reg, reg_race, reg_sex, reg_both)
 #Predicting Race and Gender
 pred_race <- lm(as.numeric(race_factor) ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge, data = df_race)
 summary(pred_race)
+# Call:
+# lm(formula = as.numeric(race_factor) ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge, data = df_race)
+
+# Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1469 -0.5097  0.2509  0.3740  0.9429 
+
+# Coefficients:
+#                            Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)               1.9120730  0.0240896  79.373  < 2e-16 ***
+# age                      -0.0096926  0.0005626 -17.227  < 2e-16 ***
+# juv_fel_misd              0.0087503  0.0099101   0.883  0.37729    
+# priors_count              0.0219862  0.0014265  15.412  < 2e-16 ***
+# crime_factorM            -0.0657762  0.0148554  -4.428 9.71e-06 ***
+# violent_chargeNonViolent -0.0429139  0.0157677  -2.722  0.00652 ** 
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.465 on 5272 degrees of freedom
+# Multiple R-squared:  0.09903, Adjusted R-squared:  0.09818 
+# F-statistic: 115.9 on 5 and 5272 DF,  p-value: < 2.2e-16
 pred_sex <- lm(as.numeric(gender_factor) ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge, data = df_race)
 summary(pred_sex)
+# Call:
+# lm(formula = as.numeric(gender_factor) ~ age + juv_fel_misd + 
+#     priors_count + crime_factor + violent_charge, data = df_race)
+
+# Residuals:
+#      Min       1Q   Median       3Q      Max 
+# -0.30449 -0.21574 -0.18969 -0.09127  1.03029 
+
+# Coefficients:
+#                            Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)               1.2375918  0.0203180  60.911  < 2e-16 ***
+# age                       0.0006006  0.0004745   1.266 0.205721    
+# juv_fel_misd             -0.0205145  0.0083585  -2.454 0.014147 *  
+# priors_count             -0.0088231  0.0012032  -7.333 2.59e-13 ***
+# crime_factorM             0.0188500  0.0125296   1.504 0.132526    
+# violent_chargeNonViolent -0.0490605  0.0132990  -3.689 0.000227 ***
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.3922 on 5272 degrees of freedom
+# Multiple R-squared:  0.02264, Adjusted R-squared:  0.02171 
+# F-statistic: 24.42 on 5 and 5272 DF,  p-value: < 2.2e-16
 
 reg_race_recid <- lm(two_year_recid ~ race_factor, data = df_race)
 summary(reg_race_recid)
