@@ -1514,7 +1514,7 @@ confusionMatrix(knn.pred, reference=test.y)
 #                   Kappa : 0.2628          
 #  Mcnemar's Test P-Value : 3.830e-15       
                                           
-#             Sensitivity : 0.8527          
+             Sensitivity : 0.8527          
 #             Specificity : 0.3911          
 #          Pos Pred Value : 0.6996          
 #          Neg Pred Value : 0.6148          
