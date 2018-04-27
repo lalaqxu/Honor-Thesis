@@ -2683,4 +2683,3 @@ confusionMatrix(gam_both.pred, reference=m_subset$two_year_recid)
 #          Detection Rate : 0.3405         
 #    Detection Prevalence : 0.5054         
 #       Balanced Accuracy : 0.6683
-
