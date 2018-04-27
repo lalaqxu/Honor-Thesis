@@ -2658,7 +2658,7 @@ confusionMatrix(knn.pred, reference=test.y)
 #    Detection Prevalence : 0.6641         
 #       Balanced Accuracy : 0.6574      
 
-#CM
+#CF
 train.y = two_year_recid[n.train]
 test.y = cf_subset$two_year_recid
 train.x = cbind(age, juv_fel_misd, priors_count, crime_factor, violent_charge, gender_factor)[n.train,]
@@ -3348,7 +3348,7 @@ confusionMatrix(tree_race.pred, reference=af_subset$two_year_recid)
 #    Detection Prevalence : 0.4595          
 #       Balanced Accuracy : 0.6236        
 
-#CM
+#CF
 tree_race = tree(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + race_factor, data=train)
 summary(tree_race)
 tree_race.probs = predict(tree_race, newdata=cf_subset)
@@ -4162,7 +4162,7 @@ confusionMatrix(tree_both.pred, reference=af_subset$two_year_recid)
 #    Detection Prevalence : 0.4595          
 #       Balanced Accuracy : 0.6236 
 
-#CM
+#CF
 tree_both = tree(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + race_factor + gender_factor, data=train)
 summary(tree_both)
 tree_both.probs = predict(tree_both, newdata=cf_subset)
