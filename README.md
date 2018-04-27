@@ -1,4 +1,4 @@
-## HONOR THESIS
+## Honor Thesis
 
 Experimenting with different machine learning models for predicting recidivism
 
