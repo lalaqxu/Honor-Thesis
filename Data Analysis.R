@@ -400,6 +400,29 @@ library(pROC)
 #Neither
 lm = lm(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge, data=train)
 summary(lm)
+# Call:
+# lm(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge, data = train)
+
+# Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1345 -0.4269 -0.1469  0.4631  1.0522 
+
+# Coefficients:
+#                            Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)               0.6884521  0.0343189  20.060   <2e-16 ***
+# age                      -0.0100439  0.0008008 -12.542   <2e-16 ***
+# juv_fel_misd              0.0101423  0.0166200   0.610   0.5418    
+# priors_count              0.0319570  0.0020284  15.754   <2e-16 ***
+# crime_factorM            -0.0266006  0.0208901  -1.273   0.2030    
+# violent_chargeNonViolent  0.0374296  0.0223156   1.677   0.0936 .  
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.4625 on 2633 degrees of freedom
+# Multiple R-squared:  0.144, Adjusted R-squared:  0.1424 
+# F-statistic: 88.61 on 5 and 2633 DF,  p-value: < 2.2e-16
+
 lm.probs = predict(lm, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -444,6 +467,30 @@ confusionMatrix(lm.pred, reference=test$two_year_recid)
 #Race
 lm_race = lm(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + race_factor, data=train)
 summary(lm_race)
+# Call:
+# lm(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + race_factor, data = train)
+
+# Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1348 -0.4267 -0.1479  0.4640  1.0518 
+
+# Coefficients:
+#                              Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)                  0.691694   0.038456  17.987   <2e-16 ***
+# age                         -0.010077   0.000820 -12.288   <2e-16 ***
+# juv_fel_misd                 0.010150   0.016623   0.611   0.5415    
+# priors_count                 0.032036   0.002072  15.463   <2e-16 ***
+# crime_factorM               -0.026893   0.020952  -1.284   0.1994    
+# violent_chargeNonViolent     0.037328   0.022326   1.672   0.0947 .  
+# race_factorAfrican-American -0.003625   0.019388  -0.187   0.8517    
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.4626 on 2632 degrees of freedom
+# Multiple R-squared:  0.144, Adjusted R-squared:  0.1421 
+# F-statistic: 73.82 on 6 and 2632 DF,  p-value: < 2.2e-16
+
 lm_race.probs = predict(lm_race, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -487,6 +534,30 @@ confusionMatrix(lm_race.pred, reference=test$two_year_recid)
 #Gender**
 lm_sex = lm(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + gender_factor, data=train)
 summary(lm_sex)
+# Call:
+# lm(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + gender_factor, data = train)
+
+# Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1314 -0.4208 -0.1420  0.4582  1.0320 
+
+# Coefficients:
+#                            Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)               0.7058914  0.0346320  20.383  < 2e-16 ***
+# age                      -0.0099585  0.0007996 -12.454  < 2e-16 ***
+# juv_fel_misd              0.0082199  0.0165964   0.495 0.620441    
+# priors_count              0.0313702  0.0020317  15.440  < 2e-16 ***
+# crime_factorM            -0.0261332  0.0208488  -1.253 0.210149    
+# violent_chargeNonViolent  0.0335821  0.0222997   1.506 0.132201    
+# gender_factorFemale      -0.0771284  0.0226801  -3.401 0.000682 ***
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.4616 on 2632 degrees of freedom
+# Multiple R-squared:  0.1478,  Adjusted R-squared:  0.1458 
+# F-statistic: 76.07 on 6 and 2632 DF,  p-value: < 2.2e-16
+
 lm_sex.probs = predict(lm_sex, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -530,6 +601,32 @@ confusionMatrix(lm_sex.pred, reference=test$two_year_recid)
 #Both
 lm_both = lm(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + race_factor + gender_factor, data=train)
 summary(lm_both)
+# Call:
+# lm(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + race_factor + gender_factor, 
+#     data = train)
+
+# Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1319 -0.4214 -0.1396  0.4586  1.0314 
+
+# Coefficients:
+#                               Estimate Std. Error t value Pr(>|t|)    
+# (Intercept)                  0.7111259  0.0388000  18.328  < 2e-16 ***
+# age                         -0.0100108  0.0008186 -12.229  < 2e-16 ***
+# juv_fel_misd                 0.0082274  0.0165993   0.496 0.620184    
+# priors_count                 0.0314939  0.0020737  15.188  < 2e-16 ***
+# crime_factorM               -0.0265995  0.0209105  -1.272 0.203463    
+# violent_chargeNonViolent     0.0334078  0.0223111   1.497 0.134420    
+# race_factorAfrican-American -0.0057965  0.0193599  -0.299 0.764654    
+# gender_factorFemale         -0.0773521  0.0226963  -3.408 0.000664 ***
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.4617 on 2631 degrees of freedom
+# Multiple R-squared:  0.1478,  Adjusted R-squared:  0.1455 
+# F-statistic: 65.19 on 7 and 2631 DF,  p-value: < 2.2e-16
+
 lm_both.probs = predict(lm_both, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -583,6 +680,33 @@ library(ISLR)
 #Neither**
 glm = glm(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge, data=train, family=binomial)
 summary(glm)
+# Call:
+# glm(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge, family = binomial, data = train)
+
+# Deviance Residuals: 
+#     Min       1Q   Median       3Q      Max  
+# -2.6399  -1.0354  -0.5743   1.0943   2.3302  
+
+# Coefficients:
+#                           Estimate Std. Error z value Pr(>|z|)    
+# (Intercept)               0.897194   0.165276   5.428 5.68e-08 ***
+# age                      -0.048269   0.004139 -11.661  < 2e-16 ***
+# juv_fel_misd              0.073958   0.095935   0.771    0.441    
+# priors_count              0.165512   0.012062  13.722  < 2e-16 ***
+# crime_factorM            -0.106064   0.098501  -1.077    0.282    
+# violent_chargeNonViolent  0.161910   0.104795   1.545    0.122    
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# (Dispersion parameter for binomial family taken to be 1)
+
+#     Null deviance: 3651.7  on 2638  degrees of freedom
+# Residual deviance: 3227.7  on 2633  degrees of freedom
+# AIC: 3239.7
+
+# Number of Fisher Scoring iterations: 4
+
 glm.probs = predict(glm, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -626,6 +750,35 @@ confusionMatrix(glm.pred, reference=test$two_year_recid)
 #Race
 glm_race = glm(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + race_factor, data=train, family=binomial)
 summary(glm_race)
+# Call:
+# glm(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + race_factor, family = binomial, 
+#     data = train)
+
+# Deviance Residuals: 
+#     Min       1Q   Median       3Q      Max  
+# -2.6414  -1.0326  -0.5695   1.0928   2.3292  
+
+# Coefficients:
+#                              Estimate Std. Error z value Pr(>|z|)    
+# (Intercept)                  0.923460   0.184331   5.010 5.45e-07 ***
+# age                         -0.048540   0.004225 -11.487  < 2e-16 ***
+# juv_fel_misd                 0.073914   0.095946   0.770    0.441    
+# priors_count                 0.166225   0.012270  13.547  < 2e-16 ***
+# crime_factorM               -0.108353   0.098758  -1.097    0.273    
+# violent_chargeNonViolent     0.160928   0.104837   1.535    0.125    
+# race_factorAfrican-American -0.029032   0.090045  -0.322    0.747    
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# (Dispersion parameter for binomial family taken to be 1)
+
+#     Null deviance: 3651.7  on 2638  degrees of freedom
+# Residual deviance: 3227.6  on 2632  degrees of freedom
+# AIC: 3241.6
+
+# Number of Fisher Scoring iterations: 4
+
 glm_race.probs = predict(glm_race, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -669,6 +822,35 @@ confusionMatrix(glm_race.pred, reference=test$two_year_recid)
 #Gender**
 glm_sex = glm(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + gender_factor, data=train, family=binomial)
 summary(glm_sex)
+# Call:
+# glm(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + gender_factor, family = binomial, 
+#     data = train)
+
+# Deviance Residuals: 
+#     Min       1Q   Median       3Q      Max  
+# -2.6303  -1.0228  -0.5625   1.0889   2.2979  
+
+# Coefficients:
+#                           Estimate Std. Error z value Pr(>|z|)    
+# (Intercept)               0.981349   0.167900   5.845 5.07e-09 ***
+# age                      -0.048000   0.004142 -11.588  < 2e-16 ***
+# juv_fel_misd              0.064047   0.095870   0.668  0.50409    
+# priors_count              0.162570   0.012058  13.482  < 2e-16 ***
+# crime_factorM            -0.108338   0.098680  -1.098  0.27226    
+# violent_chargeNonViolent  0.142190   0.105157   1.352  0.17632    
+# gender_factorFemale      -0.343106   0.107501  -3.192  0.00141 ** 
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# (Dispersion parameter for binomial family taken to be 1)
+
+#     Null deviance: 3651.7  on 2638  degrees of freedom
+# Residual deviance: 3217.4  on 2632  degrees of freedom
+# AIC: 3231.4
+
+# Number of Fisher Scoring iterations: 4
+
 glm_sex.probs = predict(glm_sex, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -712,6 +894,36 @@ confusionMatrix(glm_sex.pred, reference=test$two_year_recid)
 #Both
 glm_both = glm(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + race_factor + gender_factor, data=train, family=binomial)
 summary(glm_both)
+# Call:
+# glm(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + race_factor + gender_factor, 
+#     family = binomial, data = train)
+
+# Deviance Residuals: 
+#     Min       1Q   Median       3Q      Max  
+# -2.6322  -1.0210  -0.5589   1.0860   2.2965  
+
+# Coefficients:
+#                              Estimate Std. Error z value Pr(>|z|)    
+# (Intercept)                  1.015204   0.187051   5.427 5.72e-08 ***
+# age                         -0.048345   0.004228 -11.434  < 2e-16 ***
+# juv_fel_misd                 0.063968   0.095882   0.667  0.50467    
+# priors_count                 0.163468   0.012262  13.331  < 2e-16 ***
+# crime_factorM               -0.111240   0.098935  -1.124  0.26086    
+# violent_chargeNonViolent     0.140909   0.105203   1.339  0.18044    
+# race_factorAfrican-American -0.037164   0.090266  -0.412  0.68055    
+# gender_factorFemale         -0.344340   0.107549  -3.202  0.00137 ** 
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# (Dispersion parameter for binomial family taken to be 1)
+
+#     Null deviance: 3651.7  on 2638  degrees of freedom
+# Residual deviance: 3217.2  on 2631  degrees of freedom
+# AIC: 3233.2
+
+# Number of Fisher Scoring iterations: 4
+
 glm_both.probs = predict(glm_both, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -1915,6 +2127,31 @@ y.test = test$two_year_recid
 #Neither
 gam = gam(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge, data=train)
 summary(gam)
+# Call: gam(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge, data = train)
+# Deviance Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1345 -0.4268 -0.1469  0.4631  1.0522 
+
+# (Dispersion Parameter for gaussian family taken to be 0.2139)
+
+#     Null Deviance: 658.0743 on 2638 degrees of freedom
+# Residual Deviance: 563.288 on 2633 degrees of freedom
+# AIC: 3427.58 
+
+# Number of Local Scoring Iterations: 2 
+
+# Anova for Parametric Effects
+#                  Df Sum Sq Mean Sq  F value    Pr(>F)    
+# age               1  26.30  26.303 122.9515 < 2.2e-16 ***
+# juv_fel_misd      1   8.84   8.842  41.3315  1.52e-10 ***
+# priors_count      1  58.09  58.094 271.5513 < 2.2e-16 ***
+# crime_factor      1   0.94   0.945   4.4156   0.03571 *  
+# violent_charge    1   0.60   0.602   2.8133   0.09361 .  
+# Residuals      2633 563.29   0.214                       
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 gam.probs = predict(gam, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -1968,6 +2205,32 @@ pred.lasso = predict(lasso.mod, newdata = x.test)
 #Race
 gam_race = gam(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + race_factor, data=train)
 summary(gam_race)
+# Call: gam(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + race_factor, data = train)
+# Deviance Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1348 -0.4267 -0.1479  0.4640  1.0518 
+
+# (Dispersion Parameter for gaussian family taken to be 0.214)
+
+#     Null Deviance: 658.0743 on 2638 degrees of freedom
+# Residual Deviance: 563.2806 on 2632 degrees of freedom
+# AIC: 3429.545 
+
+# Number of Local Scoring Iterations: 2 
+
+# Anova for Parametric Effects
+#                  Df Sum Sq Mean Sq  F value    Pr(>F)    
+# age               1  26.30  26.303 122.9064 < 2.2e-16 ***
+# juv_fel_misd      1   8.84   8.842  41.3163 1.532e-10 ***
+# priors_count      1  58.09  58.094 271.4518 < 2.2e-16 ***
+# crime_factor      1   0.94   0.945   4.4139   0.03574 *  
+# violent_charge    1   0.60   0.602   2.8123   0.09367 .  
+# race_factor       1   0.01   0.007   0.0349   0.85172    
+# Residuals      2632 563.28   0.214                       
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 gam_race.probs = predict(gam_race, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -2013,6 +2276,32 @@ confusionMatrix(gam_race.pred, reference=test$two_year_recid)
 #Gender
 gam_sex = gam(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + gender_factor, data=train)
 summary(gam_sex)
+# Call: gam(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + gender_factor, data = train)
+# Deviance Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1314 -0.4208 -0.1420  0.4582  1.0321 
+
+# (Dispersion Parameter for gaussian family taken to be 0.2131)
+
+#     Null Deviance: 658.0743 on 2638 degrees of freedom
+# Residual Deviance: 560.8238 on 2632 degrees of freedom
+# AIC: 3418.01 
+
+# Number of Local Scoring Iterations: 2 
+
+# Anova for Parametric Effects
+#                  Df Sum Sq Mean Sq  F value    Pr(>F)    
+# age               1  26.30  26.303 123.4448 < 2.2e-16 ***
+# juv_fel_misd      1   8.84   8.842  41.4973 1.399e-10 ***
+# priors_count      1  58.09  58.094 272.6409 < 2.2e-16 ***
+# crime_factor      1   0.94   0.945   4.4333 0.0353394 *  
+# violent_charge    1   0.60   0.602   2.8246 0.0929503 .  
+# gender_factor     1   2.46   2.464  11.5649 0.0006821 ***
+# Residuals      2632 560.82   0.213                       
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 gam_sex.probs = predict(gam_sex, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
@@ -2058,6 +2347,34 @@ confusionMatrix(gam_sex.pred, reference=test$two_year_recid)
 #Both
 gam_both = gam(two_year_recid ~ age + juv_fel_misd + priors_count + crime_factor + violent_charge + race_factor + gender_factor, data=train)
 summary(gam_both)
+# Call: gam(formula = two_year_recid ~ age + juv_fel_misd + priors_count + 
+#     crime_factor + violent_charge + race_factor + gender_factor, 
+#     data = train)
+# Deviance Residuals:
+#     Min      1Q  Median      3Q     Max 
+# -1.1319 -0.4215 -0.1396  0.4586  1.0314 
+
+# (Dispersion Parameter for gaussian family taken to be 0.2132)
+
+#     Null Deviance: 658.0743 on 2638 degrees of freedom
+# Residual Deviance: 560.8047 on 2631 degrees of freedom
+# AIC: 3419.92 
+
+# Number of Local Scoring Iterations: 2 
+
+# Anova for Parametric Effects
+#                  Df Sum Sq Mean Sq  F value    Pr(>F)    
+# age               1  26.30  26.303 123.4021 < 2.2e-16 ***
+# juv_fel_misd      1   8.84   8.842  41.4829 1.409e-10 ***
+# priors_count      1  58.09  58.094 272.5466 < 2.2e-16 ***
+# crime_factor      1   0.94   0.945   4.4317 0.0353711 *  
+# violent_charge    1   0.60   0.602   2.8236 0.0930068 .  
+# race_factor       1   0.01   0.007   0.0351 0.8514241    
+# gender_factor     1   2.48   2.476  11.6154 0.0006639 ***
+# Residuals      2631 560.80   0.213                       
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 gam_both.probs = predict(gam_both, test, type="response")
 roc = rep(0,100)
 for (j in 1:100){
