@@ -215,8 +215,8 @@ confusionMatrix(lm.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2562          
 #  Mcnemar's Test P-Value : 2.14e-07        
                                           
-             Sensitivity : 0.8080          
-             Specificity : 0.4356          
+#             Sensitivity : 0.8080*          
+#             Specificity : 0.4356          
 #          Pos Pred Value : 0.7043          
 #          Neg Pred Value : 0.5770          
 #              Prevalence : 0.6245          
@@ -279,7 +279,7 @@ confusionMatrix(lm_race.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2501          
 #  Mcnemar's Test P-Value : 4.817e-06       
                                           
-#             Sensitivity : 0.7961          
+#             Sensitivity : 0.7961*          
 #             Specificity : 0.4431          
 #          Pos Pred Value : 0.7039          
 #          Neg Pred Value : 0.5665          
@@ -407,7 +407,7 @@ confusionMatrix(lm_both.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2312          
 #  Mcnemar's Test P-Value : 3.367e-07       
                                           
-#             Sensitivity : 0.7991          
+#             Sensitivity : 0.7991*          
 #             Specificity : 0.4208          
 #          Pos Pred Value : 0.6965          
 #          Neg Pred Value : 0.5574          
@@ -472,7 +472,7 @@ confusionMatrix(glm.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2679          
 #  Mcnemar's Test P-Value : 9.418e-08       
                                           
-             Sensitivity : 0.8140          
+#             Sensitivity : 0.8140*          
 #             Specificity : 0.4406          
 #          Pos Pred Value : 0.7076          
 #          Neg Pred Value : 0.5875          
@@ -536,7 +536,7 @@ confusionMatrix(glm_race.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2687          
 #  Mcnemar's Test P-Value : 0.004372        
                                           
-#             Sensitivity : 0.7738          
+#             Sensitivity : 0.7738*          
 #             Specificity : 0.4876          
 #          Pos Pred Value : 0.7153          
 #          Neg Pred Value : 0.5645          
@@ -601,7 +601,7 @@ confusionMatrix(glm_sex.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2506          
 #  Mcnemar's Test P-Value : 1.557e-08       
                                           
-             Sensitivity : 0.8140          
+#             Sensitivity : 0.8140*          
 #             Specificity : 0.4233          
 #          Pos Pred Value : 0.7013          
 #          Neg Pred Value : 0.5777          
@@ -664,7 +664,7 @@ confusionMatrix(glm_both.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2511          
 #  Mcnemar's Test P-Value : 5.53e-07        
                                           
-             Sensitivity : 0.8036          
+#             Sensitivity : 0.8036*          
 #             Specificity : 0.4356          
 #          Pos Pred Value : 0.7031          
 #          Neg Pred Value : 0.5714          
@@ -736,8 +736,8 @@ confusionMatrix(lda.class, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2454          
 #  Mcnemar's Test P-Value : 3.839e-12       
                                           
-             Sensitivity : 0.8333          
-             Specificity : 0.3960          
+#             Sensitivity : 0.8333*          
+#             Specificity : 0.3960          
 #          Pos Pred Value : 0.6965          
 #          Neg Pred Value : 0.5882          
 #              Prevalence : 0.6245          
@@ -806,7 +806,7 @@ confusionMatrix(lda_race.class, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2477          
 #  Mcnemar's Test P-Value : 3.473e-11       
                                           
-             Sensitivity : 0.8289          
+#             Sensitivity : 0.8289*          
 #             Specificity : 0.4035          
 #          Pos Pred Value : 0.6980          
 #          Neg Pred Value : 0.5863          
@@ -876,7 +876,7 @@ confusionMatrix(lda_sex.class, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2205         
 #  Mcnemar's Test P-Value : 1.592e-08      
                                          
-             Sensitivity : 0.8051         
+#             Sensitivity : 0.8051*         
 #             Specificity : 0.4035         
 #          Pos Pred Value : 0.6918         
 #          Neg Pred Value : 0.5544         
@@ -947,7 +947,7 @@ confusionMatrix(lda_both.class, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2312          
 #  Mcnemar's Test P-Value : 3.367e-07       
                                           
-#             Sensitivity : 0.7991          
+#             Sensitivity : 0.7991*          
 #             Specificity : 0.4208          
 #          Pos Pred Value : 0.6965          
 #          Neg Pred Value : 0.5574          
@@ -982,8 +982,8 @@ confusionMatrix(qda.class, reference=aa_subset$two_year_recid)
 #                   Kappa : 0.2286          
 #  Mcnemar's Test P-Value : < 2.2e-16       
                                           
-             Sensitivity : 0.8453          
-             Specificity : 0.3898          
+#             Sensitivity : 0.8453*          
+#             Specificity : 0.3898          
 #          Pos Pred Value : 0.5528          
 #          Neg Pred Value : 0.7385          
 #              Prevalence : 0.4715          
@@ -1015,8 +1015,8 @@ confusionMatrix(qda.class, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.1553        
 #  Mcnemar's Test P-Value : < 2.2e-16     
                                         
-             Sensitivity : 0.9494        
-             Specificity : 0.1832        
+#             Sensitivity : 0.9494**        
+#             Specificity : 0.1832**        
 #          Pos Pred Value : 0.6591        
 #          Neg Pred Value : 0.6852        
 #              Prevalence : 0.6245        
@@ -1049,8 +1049,8 @@ confusionMatrix(qda_race.class, reference=aa_subset$two_year_recid)
 #                   Kappa : 0.2264          
 #  Mcnemar's Test P-Value : < 2.2e-16       
                                           
-             Sensitivity : 0.8467          
-             Specificity : 0.3862          
+#             Sensitivity : 0.8467*          
+#             Specificity : 0.3862          
 #          Pos Pred Value : 0.5517          
 #          Neg Pred Value : 0.7384          
 #              Prevalence : 0.4715          
@@ -1083,8 +1083,8 @@ confusionMatrix(qda_race.class, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.1628          
 #  Mcnemar's Test P-Value : < 2.2e-16       
                                           
-             Sensitivity : 0.9464          
-             Specificity : 0.1931          
+#             Sensitivity : 0.9464**          
+#             Specificity : 0.1931**          
 #          Pos Pred Value : 0.6611          
 #          Neg Pred Value : 0.6842          
 #              Prevalence : 0.6245          
@@ -1118,8 +1118,8 @@ confusionMatrix(qda_sex.class, reference=aa_subset$two_year_recid)
 #                   Kappa : 0.2404          
 #  Mcnemar's Test P-Value : < 2.2e-16       
                                           
-             Sensitivity : 0.8426          
-             Specificity : 0.4044          
+#             Sensitivity : 0.8426*          
+#             Specificity : 0.4044          
 #          Pos Pred Value : 0.5580          
 #          Neg Pred Value : 0.7422          
 #              Prevalence : 0.4715          
@@ -1152,8 +1152,8 @@ confusionMatrix(qda_sex.class, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.1571          
 #  Mcnemar's Test P-Value : < 2.2e-16       
                                           
-             Sensitivity : 0.9509          
-             Specificity : 0.1832          
+#             Sensitivity : 0.9509**          
+#             Specificity : 0.1832**          
 #          Pos Pred Value : 0.6594          
 #          Neg Pred Value : 0.6916          
 #              Prevalence : 0.6245          
@@ -1186,8 +1186,8 @@ confusionMatrix(qda_both.class, reference=aa_subset$two_year_recid)
 #                   Kappa : 0.2452          
 #  Mcnemar's Test P-Value : < 2.2e-16       
                                           
-             Sensitivity : 0.8440          
-             Specificity : 0.4080          
+#             Sensitivity : 0.8440*          
+#             Specificity : 0.4080          
 #          Pos Pred Value : 0.5599          
 #          Neg Pred Value : 0.7456          
 #              Prevalence : 0.4715          
@@ -1220,8 +1220,8 @@ confusionMatrix(qda_both.class, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.1609          
 #  Mcnemar's Test P-Value : < 2.2e-16       
                                           
-             Sensitivity : 0.9494          
-             Specificity : 0.1881          
+#             Sensitivity : 0.9494**          
+#             Specificity : 0.1881**          
 #          Pos Pred Value : 0.6605          
 #          Neg Pred Value : 0.6909          
 #              Prevalence : 0.6245          
@@ -1295,8 +1295,8 @@ confusionMatrix(knn.pred, reference=test.y)
 #                   Kappa : 0.2399          
 #  Mcnemar's Test P-Value : 1.704e-15       
                                           
-             Sensitivity : 0.8482          
-             Specificity : 0.3738          
+#             Sensitivity : 0.8482*          
+#             Specificity : 0.3738          
 #          Pos Pred Value : 0.6926          
 #          Neg Pred Value : 0.5968          
 #              Prevalence : 0.6245          
@@ -1368,8 +1368,8 @@ confusionMatrix(knn.pred, reference=test.y)
 #                   Kappa : 0.256           
 #  Mcnemar's Test P-Value : 3.273e-15       
                                           
-             Sensitivity : 0.8512          
-             Specificity : 0.3861          
+#             Sensitivity : 0.8512**          
+#             Specificity : 0.3861          
 #          Pos Pred Value : 0.6976          
 #          Neg Pred Value : 0.6094          
 #              Prevalence : 0.6245          
@@ -1441,8 +1441,8 @@ confusionMatrix(knn.pred, reference=test.y)
 #                   Kappa : 0.2518          
 #  Mcnemar's Test P-Value : 3.919e-15       
                                           
-             Sensitivity : 0.8497          
-             Specificity : 0.3837          
+#             Sensitivity : 0.8497*          
+#             Specificity : 0.3837          
 #          Pos Pred Value : 0.6963          
 #          Neg Pred Value : 0.6055          
 #              Prevalence : 0.6245          
@@ -1514,7 +1514,7 @@ confusionMatrix(knn.pred, reference=test.y)
 #                   Kappa : 0.2628          
 #  Mcnemar's Test P-Value : 3.830e-15       
                                           
-             Sensitivity : 0.8527          
+#             Sensitivity : 0.8527**          
 #             Specificity : 0.3911          
 #          Pos Pred Value : 0.6996          
 #          Neg Pred Value : 0.6148          
@@ -1559,7 +1559,7 @@ confusionMatrix(tree.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : < 2.2e-16      
                                          
 #             Sensitivity : 0.4613         
-             Specificity : 0.8281         
+#             Specificity : 0.8281*         
 #          Pos Pred Value : 0.7054         
 #          Neg Pred Value : 0.6327         
 #              Prevalence : 0.4715         
@@ -1634,7 +1634,7 @@ confusionMatrix(prune.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : < 2.2e-16      
                                          
 #             Sensitivity : 0.4613         
-             Specificity : 0.8281         
+#             Specificity : 0.8281*         
 #          Pos Pred Value : 0.7054         
 #          Neg Pred Value : 0.6327         
 #              Prevalence : 0.4715         
@@ -1743,7 +1743,7 @@ confusionMatrix(rf.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2735          
 #  Mcnemar's Test P-Value : 0.005921        
                                           
-#             Sensitivity : 0.7738          
+#             Sensitivity : 0.7738*          
 #             Specificity : 0.4926          
 #          Pos Pred Value : 0.7172          
 #          Neg Pred Value : 0.5670          
@@ -1779,7 +1779,7 @@ confusionMatrix(tree_race.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : < 2.2e-16      
                                          
 #             Sensitivity : 0.4613         
-             Specificity : 0.8281         
+#             Specificity : 0.8281*         
 #          Pos Pred Value : 0.7054         
 #          Neg Pred Value : 0.6327         
 #              Prevalence : 0.4715         
@@ -1856,7 +1856,7 @@ confusionMatrix(prune_race.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : < 2.2e-16      
                                          
 #             Sensitivity : 0.4613         
-             Specificity : 0.8281         
+#             Specificity : 0.8281*         
 #          Pos Pred Value : 0.7054         
 #          Neg Pred Value : 0.6327         
 #              Prevalence : 0.4715         
@@ -1966,7 +1966,7 @@ confusionMatrix(rf_race.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2489          
 #  Mcnemar's Test P-Value : 0.02922         
                                           
-#             Sensitivity : 0.7560          
+#             Sensitivity : 0.7560*          
 #             Specificity : 0.4876          
 #          Pos Pred Value : 0.7105          
 #          Neg Pred Value : 0.5457          
@@ -2002,7 +2002,7 @@ confusionMatrix(tree_sex.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : < 2.2e-16      
                                          
 #             Sensitivity : 0.4613         
-             Specificity : 0.8281         
+#             Specificity : 0.8281*         
 #          Pos Pred Value : 0.7054         
 #          Neg Pred Value : 0.6327         
 #              Prevalence : 0.4715         
@@ -2077,7 +2077,7 @@ confusionMatrix(prune_sex.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : < 2.2e-16      
                                          
 #             Sensitivity : 0.4613         
-             Specificity : 0.8281         
+#             Specificity : 0.8281*         
 #          Pos Pred Value : 0.7054         
 #          Neg Pred Value : 0.6327         
 #              Prevalence : 0.4715         
@@ -2152,7 +2152,7 @@ confusionMatrix(rf_sex.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : 1.858e-06      
                                          
 #             Sensitivity : 0.5780         
-#             Specificity : 0.7554         
+#             Specificity : 0.7554*         
 #          Pos Pred Value : 0.6783         
 #          Neg Pred Value : 0.6674         
 #              Prevalence : 0.4715         
@@ -2222,7 +2222,7 @@ confusionMatrix(tree_both.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : < 2.2e-16      
                                          
 #             Sensitivity : 0.4613         
-             Specificity : 0.8281         
+#             Specificity : 0.8281*         
 #          Pos Pred Value : 0.7054         
 #          Neg Pred Value : 0.6327         
 #              Prevalence : 0.4715         
@@ -2297,7 +2297,7 @@ confusionMatrix(prune_both.pred, reference=aa_subset$two_year_recid)
 #  Mcnemar's Test P-Value : < 2.2e-16      
                                          
 #             Sensitivity : 0.4613         
-             Specificity : 0.8281         
+#             Specificity : 0.8281*         
 #          Pos Pred Value : 0.7054         
 #          Neg Pred Value : 0.6327         
 #              Prevalence : 0.4715         
@@ -2406,7 +2406,7 @@ confusionMatrix(rf_both.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2717          
 #  Mcnemar's Test P-Value : 0.015191        
                                           
-#             Sensitivity : 0.7679          
+#             Sensitivity : 0.7679*          
 #             Specificity : 0.4975          
 #          Pos Pred Value : 0.7177          
 #          Neg Pred Value : 0.5630          
@@ -2483,7 +2483,7 @@ confusionMatrix(gam.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2562          
 #  Mcnemar's Test P-Value : 2.14e-07        
                                           
-             Sensitivity : 0.8080          
+#             Sensitivity : 0.8080*          
 #             Specificity : 0.4356          
 #          Pos Pred Value : 0.7043          
 #          Neg Pred Value : 0.5770          
@@ -2548,7 +2548,7 @@ confusionMatrix(gam_race.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2501          
 #  Mcnemar's Test P-Value : 4.817e-06       
                                           
-#             Sensitivity : 0.7961          
+#             Sensitivity : 0.7961*          
 #             Specificity : 0.4431          
 #          Pos Pred Value : 0.7039          
 #          Neg Pred Value : 0.5665          
@@ -2678,7 +2678,7 @@ confusionMatrix(gam_both.pred, reference=ca_subset$two_year_recid)
 #                   Kappa : 0.2312          
 #  Mcnemar's Test P-Value : 3.367e-07       
                                           
-#             Sensitivity : 0.7991          
+#             Sensitivity : 0.7991*          
 #             Specificity : 0.4208          
 #          Pos Pred Value : 0.6965          
 #          Neg Pred Value : 0.5574          
